@@ -12,10 +12,10 @@ root.render(
       <h1>Weather App</h1>
       <Weather />
       <h5>
-        <a href="" target="_blank">
+        <a href="https://github.com/ladykabbz/weather-re" target="_blank">
           Open-source code
         </a>
-        , by nicole kabii from <a href=" #addlink ">She Codes</a>
+        , by nicole kabii
       </h5>
     </div>
   </React.StrictMode>
