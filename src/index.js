@@ -12,7 +12,7 @@ root.render(
       <h1>Weather App</h1>
       <Weather />
       <h5>
-        <a href="https://github.com/ladykabbz/weather-re" target="_blank">
+        <a href="https://github.com/ladykabbz/weather-re" target="blank">
           Open-source code
         </a>
         , by nicole kabii
