@@ -1,20 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import Weather from "./weather";
+import Og from "./og";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <div className="App">
-      <h1>Weather App</h1>
-      <Weather />
-      <h5>
-        <a href="https://github.com/ladykabbz/weather-re" target="blank">
-          Open-source code
-        </a>
-        , by nicole kabii
-      </h5>
+      <Og />
     </div>
   </React.StrictMode>
 );

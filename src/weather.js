@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./og.css";
 
 export default function Weather() {
   const [city, setCity] = useState("");
@@ -30,8 +31,13 @@ export default function Weather() {
   }
   let form = (
     <form onSubmit={handleSubmit}>
-      <input type="Search" placeholder="Enter a city.." onChange={updateCity} />
-      <button type="Submit">Search</button>
+      <input type="Search" placeholder="Enter a city.." onChange={updateCity} />{" "}
+      <button className="buttons1" type="Submit">
+        Search
+      </button>{" "}
+      <button className="buttons2" type="search">
+        current
+      </button>
     </form>
   );
   if (loaded) {
