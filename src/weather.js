@@ -55,6 +55,6 @@ export default function Weather(props) {
     );
   } else {
     search();
-    return null; // or a loading indicator
+    return null;
   }
 }
