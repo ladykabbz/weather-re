@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./og.css";
+import Og from "./og";
 
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -28,7 +29,7 @@ export default function Weather(props) {
   }
 
   function search() {
-    const apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+    const apiKey = "d59265a17617259a858c34b2c6833049";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayWeather);
   }
@@ -49,14 +50,12 @@ export default function Weather(props) {
             current
           </button>
         </form>
-        <ul>
-          <li>{weatherData.city} </li>
-          <li>{weatherData.temperature} </li>
-        </ul>
+
+        <Og data={weatherData} />
       </div>
     );
   } else {
     search();
-    return null;
+    return "loading..";
   }
 }
