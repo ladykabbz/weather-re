@@ -2,60 +2,59 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./og.css";
 
-export default function Weather() {
-  const [city, setCity] = useState("");
-  const [loaded, setLoaded] = useState(false);
-  const [weather, setWeather] = useState({});
+export default function Weather(props) {
+  const [city, setCity] = useState(props.defaultCity);
+  const [weatherData, setWeatherData] = useState({ ready: false });
 
   function displayWeather(response) {
-    setLoaded(true);
-    setWeather({
+    setWeatherData({
+      ready: true,
       temperature: response.data.main.temp,
-      wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
+      wind: response.data.wind.speed,
+      city: response.data.name,
     });
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    let apiKey = "93d43dfe3b4a950e5b187e5dc313705e";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-    axios.get(apiUrl).then(displayWeather);
+    search();
   }
 
   function updateCity(event) {
     setCity(event.target.value);
   }
-  let form = (
-    <form onSubmit={handleSubmit}>
-      <input type="Search" placeholder="Enter a city.." onChange={updateCity} />{" "}
-      <button className="buttons1" type="Submit">
-        Search
-      </button>{" "}
-      <button className="buttons2" type="search">
-        current
-      </button>
-    </form>
-  );
-  if (loaded) {
+
+  function search() {
+    const apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayWeather);
+  }
+
+  if (weatherData.ready) {
     return (
-      <div>
-        {form}
+      <div className="Weather">
+        <form onSubmit={handleSubmit}>
+          <input
+            type="Search"
+            placeholder="Enter a city.."
+            onChange={updateCity}
+          />{" "}
+          <button className="buttons1" type="Submit">
+            Search
+          </button>{" "}
+          <button className="buttons2" type="search">
+            current
+          </button>
+        </form>
         <ul>
-          <li>Temperature: {Math.round(weather.temperature)} C</li>
-          <li>Description: {weather.description}</li>
-          <li>Humidity: {weather.humidity}%</li>
-          <li>Wind: {weather.wind}Km/h</li>
-          <li>
-            <img src={weather.icon} alt={weather.description} />
-          </li>
+          <li>{props.temperature}</li>
         </ul>
       </div>
     );
   } else {
-    return form;
+    return null; // or a loading indicator
   }
 }
