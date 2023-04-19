@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./og.css";
-import Og from "./og";
 
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -50,7 +49,10 @@ export default function Weather(props) {
             current
           </button>
         </form>
-        <Og data={weatherData} />
+        <ul>
+          <li>{weatherData.city} </li>
+          <li>{weatherData.temperature} </li>
+        </ul>
       </div>
     );
   } else {

@@ -16,14 +16,7 @@ export default function Og(props) {
           <Weather />
           <Row>
             <Col>
-              <ul>
-                <li>{props.data.city} </li>
-
-                <li>{props.data.description} </li>
-                <li>
-                  {props.data.icon} size={52}{" "}
-                </li>
-              </ul>
+              <h3>lisbon</h3>
             </Col>
           </Row>
 
@@ -31,11 +24,11 @@ export default function Og(props) {
 
           <Row>
             <Col>
-              <h2>{props.data.temperature} </h2>
+              <h2>24c </h2>
             </Col>
             <Col>
-              <p>Humidity:{props.data.humidity}% </p>
-              <p>Wind:{props.data.wind} </p>
+              <p>Humidity:45% </p>
+              <p>Wind:23km/hr </p>
             </Col>
           </Row>
 
