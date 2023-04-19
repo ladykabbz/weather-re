@@ -7,7 +7,7 @@ import Col from "react-bootstrap/Col";
 import Weather from "./weather";
 import "./og.css";
 
-export default function Og() {
+export default function Og(props) {
   return (
     <div className="main">
       <Container>
@@ -16,10 +16,14 @@ export default function Og() {
           <Weather />
           <Row>
             <Col>
-              <p>
-                <strong> lisbon </strong> <br />
-                Monday 13:50 <br /> Clear{" "}
-              </p>
+              <ul>
+                <li>{props.data.city} </li>
+
+                <li>{props.data.description} </li>
+                <li>
+                  {props.data.icon} size={52}{" "}
+                </li>
+              </ul>
             </Col>
           </Row>
 
@@ -27,11 +31,11 @@ export default function Og() {
 
           <Row>
             <Col>
-              <h2>☀ 24C</h2>
+              <h2>{props.data.temperature} </h2>
             </Col>
             <Col>
-              <p>precipitation: 28%</p>
-              <p>Wind: 8km/h</p>
+              <p>Humidity:{props.data.humidity}% </p>
+              <p>Wind:{props.data.wind} </p>
             </Col>
           </Row>
 
