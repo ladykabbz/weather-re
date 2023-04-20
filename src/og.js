@@ -13,7 +13,7 @@ export default function Og(props) {
       <Container>
         <h1>Weather App</h1>
         <div className="Weather">
-          <Weather defaultCity="paris" />
+          <Weather defaultCity="nairobi" />
           <Row>
             <Col>
               <h3>{props.data.city} </h3>
