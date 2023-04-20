@@ -9,7 +9,7 @@ root.render(
   <React.StrictMode>
     <div className="App">
       <Og />
-      <Weather />
+      <Weather defaultCity="nairobi" />
     </div>
   </React.StrictMode>
 );

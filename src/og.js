@@ -4,8 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Weather from "./weather";
 import "./og.css";
+import Weather from "./weather";
 
 export default function Og(props) {
   return (
@@ -13,10 +13,11 @@ export default function Og(props) {
       <Container>
         <h1>Weather App</h1>
         <div className="Weather">
-          <Weather />
+          <Weather defaultCity="paris" />
           <Row>
             <Col>
-              <h3>lisbon</h3>
+              <h3>{props.data.city} </h3>
+              <h2>{props.data.description} </h2>
             </Col>
           </Row>
 
@@ -24,11 +25,11 @@ export default function Og(props) {
 
           <Row>
             <Col>
-              <h2>24c </h2>
+              <h2>{props.data.temperature} </h2>
             </Col>
             <Col>
-              <p>Humidity:45% </p>
-              <p>Wind:23km/hr </p>
+              <p>Humidity:{props.data.humidity} % </p>
+              <p>Wind:{props.data.wind} km/hr </p>
             </Col>
           </Row>
 
