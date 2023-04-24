@@ -1,20 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&family=Explora&family=Old+Standard+TT&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap");
 .main {
   background-color: pink;
   border: 1px solid black;
   display: flex;
   justify-content: center;
   margin: 100px;
+  font-family: "Instrument Serif", serif;
+  font-size: 20px;
 }
 h1 {
   text-align: center;
   text-decoration: underline;
   padding: 12px;
+  font-family: "Sacramento", cursive;
 }
 .buttons1 {
-  background-color: hotpink;
-  padding: 6px;
-}
-.buttons2 {
   background-color: aqua;
   padding: 6px;
+}
+.hum {
+  font-weight: 600;
+  font-size: 22px;
 }
