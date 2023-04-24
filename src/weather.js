@@ -69,16 +69,21 @@ export default function Weather(props) {
 
             <Row>
               <Col>
-                <h2>{Math.round(weatherData.temperature)}°C </h2>
+                <h2 className="temp">
+                  {Math.round(weatherData.temperature)}°C{" "}
+                </h2>
               </Col>
               <Col>
                 <h4>
                   <span className="hum">Humidity: </span>
-                  {weatherData.humidity} %{" "}
+                  <span className="humdata">{weatherData.humidity} % </span>
                 </h4>
                 <h4>
                   <span className="hum">Wind: </span>
-                  {Math.round(weatherData.wind)} km/hr{" "}
+                  <span className="humdata">
+                    {" "}
+                    {Math.round(weatherData.wind)} km/hr{" "}
+                  </span>
                 </h4>
               </Col>
             </Row>

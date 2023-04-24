@@ -23,4 +23,19 @@ h1 {
 .hum {
   font-weight: 600;
   font-size: 22px;
+  color: rgb(21, 122, 122);
+}
+h3,
+h2 {
+  color: rgb(21, 122, 122);
+}
+.temp {
+  color: rgb(241, 9, 125);
+  font-size: 60px;
+  font-weight: 600;
+}
+.humdata {
+  color: rgb(241, 9, 125);
+  font-size: 24px;
+  font-weight: 600;
 }
