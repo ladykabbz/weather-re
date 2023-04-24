@@ -5,15 +5,13 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./og.css";
-import Weather from "./weather";
 
 export default function Og(props) {
   return (
     <div className="main">
       <Container>
-        <h1>Weather App</h1>
+        <h1>weather app</h1>
         <div className="Weather">
-          <Weather defaultCity="nairobi" />
           <Row>
             <Col>
               <h3>{props.data.city} </h3>
