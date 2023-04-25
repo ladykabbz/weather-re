@@ -3,12 +3,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap");
 .main {
   background-color: pink;
-  border: 1px solid black;
-  display: flex;
-  justify-content: center;
-  margin: 100px;
+  border: 3px solid rgb(21, 122, 122);
+  margin: 40px;
   font-family: "Instrument Serif", serif;
   font-size: 20px;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
 }
 h1 {
   text-align: center;

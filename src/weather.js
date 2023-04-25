@@ -7,6 +7,9 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Icon from "./icon";
+import WeatherForecast from "./weatherforecast";
+
+//forecast api fetch
 
 //api fetch and inclusion
 export default function Weather(props) {
@@ -23,6 +26,7 @@ export default function Weather(props) {
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
       icon: response.data.weather[0].icon,
+      coordinates: response.data.coord,
     });
   }
 
@@ -73,6 +77,7 @@ export default function Weather(props) {
                   {Math.round(weatherData.temperature)}°C{" "}
                 </h2>
               </Col>
+
               <Col>
                 <h4>
                   <span className="hum">Humidity: </span>
@@ -91,32 +96,9 @@ export default function Weather(props) {
             <br />
 
             <Row className="forecast">
-              <hr />
-              <Col>
-                <strong>
-                  Tuesday <br /> ☀ <br /> 19C
-                </strong>
-              </Col>
-              <Col>
-                <strong>
-                  Wednesday <br /> ☀ <br /> 19C
-                </strong>
-              </Col>
-              <Col>
-                <strong>
-                  Thursday <br /> ☀ <br /> 19C
-                </strong>
-              </Col>
-              <Col>
-                <strong>
-                  Friday <br /> ☀ <br /> 19C
-                </strong>
-              </Col>
-              <Col>
-                <strong>
-                  Saturday <br /> ☀ <br /> 19C
-                </strong>
-              </Col>
+              {weatherData.coordinates && (
+                <WeatherForecast coordinates={weatherData.coordinates} />
+              )}
             </Row>
             <hr />
             <br />
